@@ -91,7 +91,7 @@ class PollReader():
         if max_harris > max_trump:
             return f"Harris: {max_harris * 100:.1f}%"
         elif max_trump > max_harris:
-            return f"Trump: {max_trump * 100:.1d)}%"
+            return f"Trump: {max_trump * 100:.1f}%"
         else:
             return f"EVEN: {max_harris * 100:.1f}%"
         pass
@@ -150,7 +150,7 @@ class PollReader():
         avg_latest_trump = sum(latest_trump)/len(latest_trump)
         change_trump = avg_latest_trump - avg_early_trump
 
-        net_change = (change_harris+.2, change_trump)
+        net_change = (-1 * change_harris, -1 * change_trump)
 
         return net_change
         pass
